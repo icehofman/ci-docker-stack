@@ -4,7 +4,7 @@
 
 # Getting started
 
-To get all docker containers up and running, in __-ci-docker-stack__ use:
+To get all docker containers up and running, in __ci-docker-stack__ use:
 
 ```
 docker-compose up
