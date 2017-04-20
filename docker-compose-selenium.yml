@@ -14,7 +14,10 @@ services:
     - 5900
   links:
     - seleniumhub
-
+  environment:
+    - HUB_PORT_4444_TCP_ADDR=seleniumhub
+    - HUB_PORT_4444_TCP_PORT=4444
+    
  chrome:
   image: selenium/node-chrome
   depends_on:
@@ -23,3 +26,6 @@ services:
     - 5900
   links:
     - seleniumhub
+  environment:
+    - HUB_PORT_4444_TCP_ADDR=seleniumhub
+    - HUB_PORT_4444_TCP_PORT=4444
