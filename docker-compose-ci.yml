@@ -8,14 +8,14 @@ services:
  nexus:
   build: ./nexus
   ports:
-    - "18081:8081"
+    - "8181:8081"
   networks:
     - prodnetwork
 
  jenkins:
   build: ./jenkins
   ports:
-    - "18080:8080"
+    - "8888:8080"
   networks:
     - prodnetwork
   volumes:
@@ -34,7 +34,7 @@ services:
  sonar:
   build: ./sonar
   ports:
-   - "19000:9000"
+   - "9000:9000"
    - "5432:5432"
   networks:
     - prodnetwork
@@ -61,7 +61,7 @@ services:
     - prodnetwork
   ports:
     - "8000:80"
-    - "12222:22"
+    - "22222:22"
   volumes:
     - /opt/gitlab/config:/etc/gitlab
     - /opt/gitlab/logs:/var/log/gitlab

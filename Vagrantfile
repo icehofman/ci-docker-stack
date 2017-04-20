@@ -7,12 +7,12 @@ Vagrant.configure("2") do |config|
 
   # Add forwarded ports
   config.vm.network "forwarded_port", guest: 8080, host: 8080
-  config.vm.network "forwarded_port", guest: 18080, host: 18080
-  config.vm.network "forwarded_port", guest: 19000, host: 19000
+  config.vm.network "forwarded_port", guest: 8888, host: 8888
+  config.vm.network "forwarded_port", guest: 9000, host: 9000
   config.vm.network "forwarded_port", guest: 5432, host: 5432
-  config.vm.network "forwarded_port", guest: 18081, host: 18081
+  config.vm.network "forwarded_port", guest: 8181, host: 8181
   config.vm.network "forwarded_port", guest: 8000, host: 8000
-  config.vm.network "forwarded_port", guest: 12222, host: 12222
+  config.vm.network "forwarded_port", guest: 22222, host: 22222
   config.vm.network "forwarded_port", guest: 4444, host: 4444
 
   config.vm.synced_folder ".", "/vagrant", disabled: false

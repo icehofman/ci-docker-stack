@@ -13,12 +13,11 @@ docker-compose up
 
 | *Tool* | *Link* | *Credentials* |
 | ------------- | ------------- | ------------- |
-| Jenkins | http://${docker-machine ip default}:18080/ | no login required |
-| SonarQube | http://${docker-machine ip default}:19000/ | admin/admin |
-| Nexus | http://${docker-machine ip default}:18081/nexus | admin/admin123 |
-| GitLab | http://${docker-machine ip default}/ | root/5iveL!fe |
+| Jenkins | http://${docker-machine ip default}:8888/ | no login required |
+| SonarQube | http://${docker-machine ip default}:9000/ | admin/admin |
+| Nexus | http://${docker-machine ip default}:8181/ | admin/admin123 |
+| GitLab | http://${docker-machine ip default}:8000/ | root/5iveL!fe |
 | Selenium Grid | http://${docker-machine ip default}:4444/grid/console | no login required |
-| Conference App | http://${docker-machine ip default}:48080/currentSessions | no login required |
 
 ## Screenshots
 
