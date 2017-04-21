@@ -12,7 +12,6 @@ services:
     - "8888:8080"
   links:
     - nexus
-    - gitlab
     - sonar
     - sonardb
   volumes:
@@ -21,7 +20,6 @@ services:
     - /opt/jenkins:/var/lib/jenkins
   depends_on:
     - nexus
-    - gitlab
     - sonar
     - sonardb
   environment:
@@ -50,14 +48,3 @@ services:
    - POSTGRES_PASSWORD=sonar
   volumes:
     - /opt/postgres/data:/var/lib/postgresql/data
-
- gitlab:
-  image: gitlab/gitlab-ce:8.14.4-ce.0
-  restart: always
-  ports:
-    - "8000:80"
-    - "22222:22"
-  volumes:
-    - /opt/gitlab/config:/etc/gitlab
-    - /opt/gitlab/logs:/var/log/gitlab
-    - /opt/gitlab/data:/var/opt/gitlab

@@ -16,14 +16,12 @@ vagrant up
 | Jenkins | http://${docker-machine ip default}:8888/ | no login required |
 | SonarQube | http://${docker-machine ip default}:9000/ | admin/admin |
 | Nexus | http://${docker-machine ip default}:8181/ | admin/admin123 |
-| GitLab | http://${docker-machine ip default}:8000/ | root/5iveL!fe |
 | Selenium Grid | http://${docker-machine ip default}:4444/grid/console | no login required |
 
 ## Screenshots
 
 Here is an overview of all tools:
 
-- GitLab is used for storing the Source Code
 - Jenkins contains build job and is triggered once projects in GitLab are updated
 - As part of the CI build, Jenkins triggers a static code analysis and the results are stored in SonarQube
 - The Maven build uses Nexus as a Proxy Repository for all 3rd party libs. The build artifacts are deployed to the Nexus Release Repository

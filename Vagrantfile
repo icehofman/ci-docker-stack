@@ -11,16 +11,20 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 9000, host: 9000
   config.vm.network "forwarded_port", guest: 5432, host: 5432
   config.vm.network "forwarded_port", guest: 8181, host: 8181
-  config.vm.network "forwarded_port", guest: 8000, host: 8000
-  config.vm.network "forwarded_port", guest: 22222, host: 22222
   config.vm.network "forwarded_port", guest: 4444, host: 4444
 
   config.vm.synced_folder ".", "/vagrant", disabled: false
   
   config.vm.provider "virtualbox" do |v|
-    v.memory = 6144
+    v.memory = 4096
     v.cpus = 2
   end
+
+  config.vm.provision "shell", inline: "swapoff -a"
+  config.vm.provision "shell", inline: "fallocate -l 2G /swapfile"
+  config.vm.provision "shell", inline: "chmod 600 /swapfile"
+  config.vm.provision "shell", inline: "mkswap /swapfile"
+  config.vm.provision "shell", inline: "swapon /swapfile"
 
   config.vm.provision :docker
 
